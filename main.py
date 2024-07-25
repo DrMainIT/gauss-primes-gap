@@ -25,4 +25,21 @@ log(x1) = log(10) <=> 10^y = 10 ==> y = 1
 
 log(x2) = log(10^3) <=> 10^y = 10^3 ==> y = 3
 
+using the base 10 we have an increment of 1 when we arguments grows in power.
+So, to have an increment of 2.7 we should change basis.
+
+the base chosen by Gauss was e = 2.71
+applying this property to the problem (find number of primes from 1 to n)
+we have that the logarithm of 10^n base e gives the approximate distance from one prime to the other.
+For example:
+10 / p = ln(10)
+10^2 / p = ln(10^2)
+
+doing the inverse formula we can resolve the problem.
+
+p = 10 / ln(10)
+p = 10^2 / ln(10^2)
+p = n / ln(n)
+
+For small n number the uncertainty is pretty big try to use plot_primes() to see how the error decrease for bigger n
 """
