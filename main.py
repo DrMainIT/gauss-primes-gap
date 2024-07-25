@@ -70,7 +70,33 @@ def create_primes(n):
     return lst
 
 
+def distance_primes(lst: list, n: int):
+    distances = {}
+    loop = [10 ** i for i in range(1, round(math.log(n, 10)+1))]
+    for i in loop:
+        count = []
+        for j in lst[:i]:
+            if j != 0:
+                count.append(j)
+    #    print(len(count), i)
+        mean = i / len(count)
+        distances[str(i)] = mean
+    return distances
+
+
+def plot_primes(datas):
+    x = list(datas.keys())[:-1]
+    y = list(datas.values())
+    y = [s-t for t, s in zip(y, y[1:])]
+    print(y, x)
+    plt.plot(x, y)
+    plt.show()
+
+
 if __name__ == '__main__':
     n_primes = 1000000
     primes = create_primes(n_primes)
+    dist_primes = distance_primes(primes, n_primes)
+    print(dist_primes)
+    print(plot_primes(dist_primes))
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
