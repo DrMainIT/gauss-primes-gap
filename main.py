@@ -43,3 +43,34 @@ p = n / ln(n)
 
 For small n number the uncertainty is pretty big try to use plot_primes() to see how the error decrease for bigger n
 """
+import math
+import matplotlib.pyplot as plt
+
+
+# used to calculate primes
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2,int(math.sqrt(n))+1):
+        if n % i == 0:
+            return False
+    return True
+
+
+# used to calculate primes
+def create_primes(n):
+    lst = []
+    for i in range(n+1):
+        if is_prime(i):
+            lst.append(i)
+        else:
+            lst.append(0)
+    #f = open('prime.txt','w')
+    #f.write(str(lst))
+    return lst
+
+
+if __name__ == '__main__':
+    n_primes = 1000000
+    primes = create_primes(n_primes)
+# See PyCharm help at https://www.jetbrains.com/help/pycharm/
