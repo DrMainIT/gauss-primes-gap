@@ -1,5 +1,5 @@
 """
-the rapport between some number n and the numbers of primes that appears from 1 to n is something like this
+the relationship between some number n and the numbers of primes that appears from 1 to n is something like this
 n / p = q
 p = primes
 q = a quotient
